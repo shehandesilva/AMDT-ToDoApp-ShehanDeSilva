@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Image,Button,Pressable } from 'react-native';
-
+import Todos from "../Component/ToDo";
 function MainScreen() {
     return (
         <View style={styles.container}>
@@ -17,6 +17,15 @@ function MainScreen() {
                     <Text style={styles.buttonText}>+</Text>
                 </Pressable>
             </View>
+            <Text style={styles.listtext}>Today's To DO.</Text>
+            <View style={styles.row}>
+                <Todos />
+                <Todos />
+            </View>
+            <View style={styles.row}>
+                <Todos />
+                <Todos />
+            </View>
         </View>
     );
 }
@@ -26,7 +35,7 @@ export default MainScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 26,
+        padding: 24,
     },
     textLine1: {
         marginTop:15,
@@ -45,7 +54,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 12,
         backgroundColor: '#3F3F3F',
-        width: '90%',
+        width: '80%',
         marginRight: 10,
         justifyContent: 'flex-start',
     },
@@ -71,11 +80,20 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
         paddingHorizontal:16,
         paddingVertical:9,
+        marginRight:3,
     },
     buttonText: {
         color: '#3F3F3F',
         textAlign: 'center',
         fontSize: 20,
+    },
+    listtext: {
+        marginTop:10,
+        marginBottom:10,
+        color: '#F5FCFF',
+        textAlign: 'left',
+        fontSize: 24,
+        marginLeft:5,
     },
 });
 
